@@ -5,16 +5,19 @@ public class Sujet{
 	  private int id;
 	  private String titre;
 	  private int idgroupe;
+	  private int idens;
 	  
 	  public Sujet(String titre, int id) {
 		  this.titre = titre;
 		  this.id = id;
 	  }
+	  
+	  
 
 	  public String getTitre() {return titre;}
 	  public int getId() {return id;}
 	  public void setTitre(String titre) {this.titre = titre;}
-	  public void setId(int id){this.id = id;}
+	  public void setId(int id){this.id = id;} 
 
 	  public Sujet(){
 	    id = 0000;

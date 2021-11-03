@@ -14,6 +14,13 @@ public class Etudiant implements Serializable{
 
 	public void ajoutetudiant(int id) {membre.add(id);}
 	
+	public Etudiant() {
+		this.nom = "";
+		this.prenom = "";
+		this.id = 0 ;
+		this.idgroupe = 0;
+	}
+	
 	public Etudiant(String nom, String prenom, int id){
 		this.nom=nom;
 		this.prenom=prenom;
@@ -21,11 +28,11 @@ public class Etudiant implements Serializable{
 		this.idgroupe = 0;
 	}
 	
-	public Etudiant(String nom, String prenom, int id, int idg){
+	public Etudiant(String nom, String prenom, int id, int idgroupe){
 		this.nom=nom;
 		this.prenom=prenom;
 		this.id=id;
-		this.idgroupe = idg;
+		this.idgroupe = idgroupe;
 	}
 	
 	public String getnom() {return this.nom;}

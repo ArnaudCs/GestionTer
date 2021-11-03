@@ -24,7 +24,7 @@ public class TestSujet {
 		assertTrue(G3.getidsujet() == 126);
 		assertTrue(G2.getidsujet() == 0);
 	}
-	
+	 
 	@Test
 	public void SujetEnseignant(){
 		Enseignant ES1 = new Enseignant("Philippe", "Ciot", 1254879);

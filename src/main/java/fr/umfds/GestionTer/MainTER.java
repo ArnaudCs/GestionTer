@@ -31,25 +31,17 @@ public class MainTER {
 		System.out.println(G1.getmembre() == "[111111]");
 		
 		ObjectMapper objectMapper = new ObjectMapper(); 
-		Etudiant E1 = new Etudiant("Test", "Test2", 215451);
+		Etudiant E1 = new Etudiant("Cossu", "Arnaud", 215451, 1254);
 		try {
 			objectMapper.writeValue(new File("target/etudiant.json"), E1);
-		} catch (StreamWriteException e) {
-			e.printStackTrace();
-		} catch (DatabindException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		
 		try {
-			Etudiant Etu1 = objectMapper.readValue(Paths.get("target/etudiant.json").toFile(), Etudiant.class);
-		} catch (StreamReadException e) {
-			e.printStackTrace();
-		} catch (DatabindException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
+			Etudiant listeEtudiants = objectMapper.readValue(Paths.get("target/etudiant.json").toFile(), Etudiant.class);
+			System.out.println(listeEtudiants);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	} 
