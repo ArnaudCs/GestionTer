@@ -12,8 +12,6 @@ public class Sujet{
 		  this.id = id;
 	  }
 	  
-	  
-
 	  public String getTitre() {return titre;}
 	  public int getId() {return id;}
 	  public void setTitre(String titre) {this.titre = titre;}

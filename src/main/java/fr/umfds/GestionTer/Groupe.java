@@ -11,7 +11,13 @@ public class Groupe implements Serializable{
   private int idSujet;
   private ArrayList<Integer> membre;
 
-
+  public Groupe() {
+	this.id = 0;
+	this.nom = "";
+	this.idSujet = 0;
+	this.membre = null;
+  }
+  
   public Groupe(int id, String nom, int idS, ArrayList<Integer> membre){
     this.id = id;
     this.nom = nom;
