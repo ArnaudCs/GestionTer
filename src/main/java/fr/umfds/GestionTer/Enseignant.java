@@ -6,6 +6,13 @@ public class Enseignant{
 	private int id;
 	private int idSujet;
 	
+	public Enseignant() {
+		this.nom = "";
+		this.prenom = "";
+		this.id = 0 ;
+		this.idSujet = 0;
+	}
+	
 	public Enseignant(String nom, String prenom, int id, int ids){
 		this.nom = nom;
 		this.prenom = prenom;
@@ -28,6 +35,12 @@ public class Enseignant{
 	
 	public String affichage() {
 		return ("\nNom de l'enseignant : " + this.getnom() + "\nPrenom de l'enseignant : " + this.getprenom() + "\nId de l'enseignant : " 
+				+ this.getid() + "\nId du sujet : " + this.getids());
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("\nNom de l'enseignant : " + this.getnom() + "\nPrenom de l'enseignant : " + this.getprenom() + "\nId de l'enseignant : " 
 				+ this.getid() + "\nId du sujet : " + this.getids());
 	}
 }

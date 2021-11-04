@@ -51,7 +51,7 @@ public class Etudiant implements Serializable{
 	
 	@Override
 	public String toString() {
-		return String.format("\nNom de l'étudiant : " + this.getnom() + "\nPrenom de l'etudiant: " + this.getprenom() 
+		return ("\nNom de l'étudiant : " + this.getnom() + "\nPrenom de l'etudiant: " + this.getprenom() 
 		+ "\nId de l'etudiant : " + this.getid() + "\nId du groupe : " + this.getidgroupe());
 	}
 }

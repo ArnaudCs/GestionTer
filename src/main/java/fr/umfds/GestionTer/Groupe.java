@@ -18,6 +18,13 @@ public class Groupe implements Serializable{
 	this.membre = null;
   }
   
+  public Groupe(int id, String nom, int idS){
+	this.id = id;
+	this.nom = nom;
+	this.idSujet = idS;
+	this.membre = membre;
+  }
+  
   public Groupe(int id, String nom, int idS, ArrayList<Integer> membre){
     this.id = id;
     this.nom = nom;
@@ -28,11 +35,10 @@ public class Groupe implements Serializable{
   public Groupe(int id, String nom, ArrayList<Integer> membre){
 	this.id = id;
 	this.nom = nom;
-	this.idSujet = 0;
 	this.membre = membre;
+	this.idSujet = 0;
   }
   
-  public int getIdsujet() {return idSujet;}
   public String getmembre() {return membre.toString();}
   public int getid() {return this.id;}
   public String getnom() {return this.nom;}
@@ -56,6 +62,12 @@ public class Groupe implements Serializable{
 	  return ("\nId du groupe : " + this.getid() + "\nNom du groupe : " + this.getnom() + "\nId du sujet : " 
 			  + this.getidsujet() + "\nMembres du groupe : " + this.getmembre());
   }
+  
+  @Override
+	public String toString() {
+		return ("\nId du groupe : " + this.getid() + "\nNom du groupe : " + this.getnom() + "\nId du sujet : " 
+				  + this.getidsujet() + "\nMembres du groupe : " + this.getmembre());
+	}
 }
 
   
