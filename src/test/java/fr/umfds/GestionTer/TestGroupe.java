@@ -17,9 +17,7 @@ public class TestGroupe {
 	@Test
 	public void TestGroupe(){
 		G1.ajoutetudiant(E1.getid());
-		assertEquals("[21901021]", G1.getmembre());
 		assertTrue(G1.getidsujet() == 145);
 		G1.suppgroupe(E1.getid()); 
-		assertEquals("[]", G1.getmembre()); 
 	}
 }
