@@ -39,7 +39,7 @@ public class Groupe implements Serializable{
 	this.idSujet = 0;
   }
   
-  public String getmembre() {return membre.toString();}
+  public ArrayList<Integer> getmembre() {return this.membre;}
   public int getid() {return this.id;}
   public String getnom() {return this.nom;}
   public int getidsujet() {return this.idSujet;}

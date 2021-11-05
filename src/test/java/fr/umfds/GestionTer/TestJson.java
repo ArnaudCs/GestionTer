@@ -69,4 +69,23 @@ public class TestJson {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void TestJsonGroupe() {
+		ObjectMapper objectMapper = new ObjectMapper(); 
+		try {
+			G1.ajoutetudiant(12554);
+			objectMapper.writeValue(new File("target/groupetest.json"), G1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			Groupe groupe = objectMapper.readValue(Paths.get("target/groupetest.json").toFile(), Groupe.class);
+			System.out.println(groupe);
+			assertTrue(G1.getid() == 213);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

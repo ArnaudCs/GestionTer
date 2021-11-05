@@ -33,7 +33,7 @@ public class MainTER {
 		Groupe G1 = new Groupe(213, "GroupeB", 145, membreG1);
 		G1.ajoutetudiant(125487);
 		G1.ajoutetudiant(125496); 
-
+		
 		try {
 			objectMapper.writeValue(new File("target/groupe.json"), G1);
 		} catch (Exception e) {
@@ -45,7 +45,11 @@ public class MainTER {
 			System.out.println(groupe);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}		
+		}
+		
+		G2.ajoutetudiant(1255487);
+		//System.out.println(G2.getmembre());
+		//System.out.println(G2.getmembre().getClass().getSimpleName());
 		
 		/*try {
 			Etudiant[] listetudiant = objectMapper.readValue(Paths.get("target/etudiant.json").toFile(), Etudiant[].class);
@@ -56,8 +60,6 @@ public class MainTER {
 		}*/
 	} 
 }
-
-//etudiant bon, enseignant bon, sujet bon,groupe pas bon || liste etudiant bon
 
 
 
