@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Groupe.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GestionTer</a> &gt; <a href="index.source.html" class="el_package">fr.umfds.GestionTer</a> &gt; <span class="el_source">Groupe.java</span></div><h1>Groupe.java</h1><pre class="source lang-java linenums">package fr.umfds.GestionTer;
+
+import java.io.Serializable;
+import java.lang.String; 
+import java.util.ArrayList;
+
+public class Groupe implements Serializable{
+	
+  private int id;
+  private String nom;
+  private int idSujet;
+  private ArrayList&lt;Integer&gt; membre;
+
+<span class="fc" id="L14">  public Groupe() {</span>
+<span class="fc" id="L15">	this.id = 0;</span>
+<span class="fc" id="L16">	this.nom = &quot;&quot;;</span>
+<span class="fc" id="L17">	this.idSujet = 0;</span>
+<span class="fc" id="L18">	this.membre = null;</span>
+<span class="fc" id="L19">  }</span>
+  
+<span class="nc" id="L21">  public Groupe(int id, String nom, int idS){</span>
+<span class="nc" id="L22">	this.id = id;</span>
+<span class="nc" id="L23">	this.nom = nom;</span>
+<span class="nc" id="L24">	this.idSujet = idS;</span>
+<span class="nc" id="L25">	this.membre = membre;</span>
+<span class="nc" id="L26">  }</span>
+  
+<span class="fc" id="L28">  public Groupe(int id, String nom, int idS, ArrayList&lt;Integer&gt; membre){</span>
+<span class="fc" id="L29">    this.id = id;</span>
+<span class="fc" id="L30">    this.nom = nom;</span>
+<span class="fc" id="L31">    this.idSujet = idS;</span>
+<span class="fc" id="L32">    this.membre = membre;</span>
+<span class="fc" id="L33">  }</span>
+  
+<span class="fc" id="L35">  public Groupe(int id, String nom, ArrayList&lt;Integer&gt; membre){</span>
+<span class="fc" id="L36">	this.id = id;</span>
+<span class="fc" id="L37">	this.nom = nom;</span>
+<span class="fc" id="L38">	this.membre = membre;</span>
+<span class="fc" id="L39">	this.idSujet = 0;</span>
+<span class="fc" id="L40">  }</span>
+  
+<span class="fc" id="L42">  public ArrayList&lt;Integer&gt; getmembre() {return this.membre;}</span>
+<span class="fc" id="L43">  public int getid() {return this.id;}</span>
+<span class="fc" id="L44">  public String getnom() {return this.nom;}</span>
+<span class="fc" id="L45">  public int getidsujet() {return this.idSujet;}</span>
+<span class="fc" id="L46">  public void setidsujet(int ids) {this.idSujet = ids;}</span>
+  
+<span class="fc" id="L48">  public void ajoutetudiant(int id) {membre.add(id);}</span>
+ 
+  public String suppgroupe(int id) {
+<span class="fc" id="L51">	  int n = membre.size();</span>
+<span class="pc bpc" id="L52" title="1 of 2 branches missed.">	   for(int i = 0; i&lt;n; i++) {</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">		   if (membre.get(i) == id) {</span>
+<span class="fc" id="L54">			   membre.remove(i);</span>
+<span class="fc" id="L55">			   return &quot;\nL'étudiant à bien été supprimé\n&quot;;</span>
+		   }
+	   }
+<span class="nc" id="L58">	   return &quot;\nL'étudiant n'est pas dans le groupe\n&quot;;</span>
+  }
+ 
+  public String affichage(){
+<span class="nc" id="L62">	  return (&quot;\nId du groupe : &quot; + this.getid() + &quot;\nNom du groupe : &quot; + this.getnom() + &quot;\nId du sujet : &quot; </span>
+<span class="nc" id="L63">			  + this.getidsujet() + &quot;\nMembres du groupe : &quot; + this.getmembre());</span>
+  }
+  
+  @Override
+	public String toString() {
+<span class="fc" id="L68">		return (&quot;\nId du groupe : &quot; + this.getid() + &quot;\nNom du groupe : &quot; + this.getnom() + &quot;\nId du sujet : &quot; </span>
+<span class="fc" id="L69">				  + this.getidsujet() + &quot;\nMembres du groupe : &quot; + this.getmembre());</span>
+	}
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

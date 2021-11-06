@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Sujet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GestionTer</a> &gt; <a href="index.source.html" class="el_package">fr.umfds.GestionTer</a> &gt; <span class="el_source">Sujet.java</span></div><h1>Sujet.java</h1><pre class="source lang-java linenums">package fr.umfds.GestionTer;
+
+public class Sujet{
+	
+	  private int id;
+	  private String titre;
+	  private int idgroupe;
+	  private int idens;
+	  
+
+<span class="fc" id="L11">	  public Sujet(){</span>
+<span class="fc" id="L12">	    id = 0000;</span>
+<span class="fc" id="L13">	    titre = &quot;Inconnu&quot;;</span>
+<span class="fc" id="L14">	    idgroupe = 0;</span>
+<span class="fc" id="L15">	    idens = 0;</span>
+<span class="fc" id="L16">	  }</span>
+	  
+<span class="fc" id="L18">	  public Sujet(int id, String titre){</span>
+<span class="fc" id="L19">		 this.id = id;</span>
+<span class="fc" id="L20">		 this.titre = titre;</span>
+<span class="fc" id="L21">		 this.idgroupe = 0;</span>
+<span class="fc" id="L22">	  }</span>
+
+<span class="fc" id="L24">	  public Sujet(int id, String titre, int idg){</span>
+<span class="fc" id="L25">	     this.id = id;</span>
+<span class="fc" id="L26">	     this.titre = titre;</span>
+<span class="fc" id="L27">		 this.idgroupe=idg;</span>
+<span class="fc" id="L28">	  }</span>
+		  
+<span class="nc" id="L30">	  public Sujet(int id, String titre, int idg, int idens) {</span>
+<span class="nc" id="L31">		 this.id = id;</span>
+<span class="nc" id="L32">		 this.titre = titre;</span>
+<span class="nc" id="L33">		 this.idgroupe=idg;</span>
+<span class="nc" id="L34">		 this.idens = idens;</span>
+<span class="nc" id="L35">	  }</span>
+	  
+<span class="fc" id="L37">	  public String gettitre() {return this.titre;}</span>
+<span class="fc" id="L38">	  public int getid() {return this.id;}</span>
+<span class="fc" id="L39">	  public void setidg(int idg) {this.idgroupe = idg;}</span>
+<span class="fc" id="L40">	  public int getidg() {return this.idgroupe;}</span>
+	  
+	  
+<span class="fc" id="L43">	  public void setTitre(String titre) {this.titre = titre;}</span>
+<span class="fc" id="L44">	  public void setId(int id){this.id = id;} </span>
+	  
+<span class="nc" id="L46">	  public String affichage() {return (&quot;\nTitre du sujet : &quot; + this.gettitre() + &quot;\nId du sujet : &quot; + this.getid() + &quot;\nId du groupe : &quot; + this.getidg());}</span>
+	  
+	  @Override
+	  public String toString() {
+<span class="fc" id="L50">			return String.format(&quot;\nTitre du sujet : &quot; + this.gettitre() + &quot;\nId du sujet : &quot; + this.getid() + &quot;\nId du groupe : &quot; + this.getidg());</span>
+	  }
+}
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

@@ -1,13 +1,11 @@
 package fr.umfds.GestionTer;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class TestJson {

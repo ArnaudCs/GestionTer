@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainTER.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">GestionTer</a> &gt; <a href="index.source.html" class="el_package">fr.umfds.GestionTer</a> &gt; <span class="el_source">MainTER.java</span></div><h1>MainTER.java</h1><pre class="source lang-java linenums">package fr.umfds.GestionTer;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.exc.StreamReadException;
+import com.fasterxml.jackson.core.exc.StreamWriteException;
+import com.fasterxml.jackson.databind.DatabindException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+<span class="nc" id="L21">public class MainTER {</span>
+	public static void main(String[] arguments)
+	{ 
+<span class="nc" id="L24">		ArrayList&lt;Integer&gt; membreG1 = new ArrayList&lt;Integer&gt;();</span>
+<span class="nc" id="L25">		ArrayList&lt;Integer&gt; membreG2 = new ArrayList&lt;Integer&gt;();</span>
+<span class="nc" id="L26">		Etudiant E3 = new Etudiant(&quot;Maxime&quot;, &quot;Bourret&quot;, 219485);</span>
+<span class="nc" id="L27">		Etudiant E2 = new Etudiant(&quot;Gatié&quot;, &quot;Blob&quot;, 219475);</span>
+
+				
+<span class="nc" id="L30">		Groupe G2 = new Groupe(213, &quot;GroupeB&quot;, 150, membreG2);</span>
+<span class="nc" id="L31">		G2.ajoutetudiant(E3.getid());</span>
+		
+<span class="nc" id="L33">		ObjectMapper objectMapper = new ObjectMapper(); </span>
+		//objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
+<span class="nc" id="L35">		Groupe G1 = new Groupe(213, &quot;GroupeB&quot;, 145, membreG1);</span>
+<span class="nc" id="L36">		G1.ajoutetudiant(125487);</span>
+<span class="nc" id="L37">		G1.ajoutetudiant(125496); </span>
+<span class="nc" id="L38">		ArrayList&lt;Etudiant&gt; listetu = new ArrayList&lt;Etudiant&gt;();</span>
+<span class="nc" id="L39">		listetu.add(E3);</span>
+<span class="nc" id="L40">		listetu.add(E2);	</span>
+		
+		try {
+<span class="nc" id="L43">			objectMapper.writeValue(new File(&quot;target/groupe.json&quot;), G1);</span>
+<span class="nc" id="L44">		} catch (Exception e) {</span>
+<span class="nc" id="L45">			e.printStackTrace();</span>
+		}
+		
+		try {
+<span class="nc" id="L49">			Groupe groupe = objectMapper.readValue(Paths.get(&quot;target/groupe.json&quot;).toFile(), Groupe.class);</span>
+<span class="nc" id="L50">			System.out.println(groupe);</span>
+<span class="nc" id="L51">		} catch (Exception e) {</span>
+<span class="nc" id="L52">			e.printStackTrace();</span>
+		}
+		
+<span class="nc" id="L55">		G2.ajoutetudiant(1255487);</span>
+		//System.out.println(G2.getmembre());
+		//System.out.println(G2.getmembre().getClass().getSimpleName());
+		try {
+<span class="nc" id="L59">			objectMapper.writeValue(new File(&quot;target/etudiant.json&quot;), listetu);</span>
+<span class="nc" id="L60">		} catch (Exception e) {</span>
+<span class="nc" id="L61">			e.printStackTrace();</span>
+		}
+		
+		try {
+<span class="nc" id="L65">			Etudiant[] listetudiant = objectMapper.readValue(Paths.get(&quot;target/etudiant.json&quot;).toFile(), Etudiant[].class);</span>
+<span class="nc bnc" id="L66" title="All 2 branches missed.">			for(int i = 0; i &lt; listetudiant.length; i ++) {</span>
+<span class="nc" id="L67">				System.out.println(listetudiant[i]);}</span>
+<span class="nc" id="L68">		} catch (Exception e) {</span>
+<span class="nc" id="L69">			e.printStackTrace();</span>
+		}
+		
+		
+<span class="nc" id="L73">	} </span>
+}
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
