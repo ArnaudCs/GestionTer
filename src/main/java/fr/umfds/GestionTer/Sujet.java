@@ -39,6 +39,9 @@ public class Sujet{
 	  public void setidg(int idg) {this.idgroupe = idg;}
 	  public int getidg() {return this.idgroupe;}
 	  
+	  /*public Sujet getsujet() {
+		  return Sujet;
+	  }*/
 	  
 	  public void setTitre(String titre) {this.titre = titre;}
 	  public void setId(int id){this.id = id;} 

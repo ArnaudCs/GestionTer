@@ -10,6 +10,7 @@ public class TestSujet {
 	Groupe G1 = new Groupe(213, "GroupeB", 145, membreG1);
 	Sujet S1 = new Sujet(125468, "Publicité des singes");
 	Sujet S2 = new Sujet(125468, "Publicité des singes", 125487);
+	Sujet S3 = new Sujet(126, "Publicité des singes", 12548);
 
 	@Test
 	public void TestSujetGroupe(){
@@ -20,6 +21,10 @@ public class TestSujet {
 		G3.setidsujet(126);
 		assertTrue(G3.getidsujet() == 126);
 		assertTrue(G2.getidsujet() == 0);
+		
+		assertTrue(G3.getidsujet() == S3.getid());
+		S3.setidg(G3.getid());
+		assertTrue(G3.getid() == S3.getidg());
 	}
 	 
 	@Test

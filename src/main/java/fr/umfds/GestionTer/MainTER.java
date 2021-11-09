@@ -39,7 +39,7 @@ public class MainTER {
 		listetu.add(E3);
 		listetu.add(E2);	
 		
-		try {
+		/*try {
 			objectMapper.writeValue(new File("target/groupe.json"), G1);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -67,7 +67,7 @@ public class MainTER {
 				System.out.println(listetudiant[i]);}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 		
 		
 	} 

@@ -45,6 +45,13 @@ public class Groupe implements Serializable{
   public int getidsujet() {return this.idSujet;}
   public void setidsujet(int ids) {this.idSujet = ids;}
   
+  public void addsujet() {
+  }
+  
+  /*public Groupe sujet(Object e) {
+	  return this.idSujet = e.getid();
+  }*/
+  
   public void ajoutetudiant(int id) {membre.add(id);}
  
   public String suppgroupe(int id) {
